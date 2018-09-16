@@ -35,6 +35,11 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
         this.isShowErrorToast = isShowErrorToast;
     }
 
+    //防止重复调用回调，拦截错误弹出
+    public BaseObserver() {
+        this.isShowErrorToast = false;
+    }
+
 
     @Override
     protected void onStart() {

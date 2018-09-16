@@ -161,7 +161,7 @@ public class InBaseDealActivity extends BaseActivity implements RetrofitDownload
 
         //放在基类BaseActivity的返回全局对象
         getDataResult(RetrofitServiceManager.getInstance().creat(ApiService.class).postDataType(map), ApiService.request_data_type_code, true, true,
-                new BaseObserver<DataTestInfo>(false) {
+                new BaseObserver<DataTestInfo>() {
                     @Override
                     protected void onCompleted(boolean isSuccess, DataTestInfo dataTestInfo, Throwable e) {
                         if (isSuccess) {
@@ -175,7 +175,7 @@ public class InBaseDealActivity extends BaseActivity implements RetrofitDownload
 
         // 放在基类BaseActivity的返回Result对象
         getDataAll(RetrofitServiceManager.getInstance().creat(ApiService.class).postDataType(map), ApiService.request_data_type_code, true, true,
-                new BaseObserver<BaseResponse<DataTestInfo>>(true) {
+                new BaseObserver<BaseResponse<DataTestInfo>>() {
                     @Override
                     protected void onCompleted(boolean isSuccess, BaseResponse<DataTestInfo> dataTestInfoBaseResponse, Throwable e) {
                         if (isSuccess) {
