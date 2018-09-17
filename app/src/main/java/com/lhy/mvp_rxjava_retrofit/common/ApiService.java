@@ -3,6 +3,7 @@ package com.lhy.mvp_rxjava_retrofit.common;
 
 import com.lhy.mvp_rxjava_retrofit.entity.BannerEntity;
 import com.lhy.mvp_rxjava_retrofit.entity.DataTestInfo;
+import com.lhy.mvp_rxjava_retrofit.http.entity.BaseResponse;
 
 import java.util.HashMap;
 import java.util.List;

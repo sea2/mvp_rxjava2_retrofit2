@@ -2,17 +2,17 @@ package com.lhy.mvp_rxjava_retrofit.http;
 
 import android.util.Log;
 
-import com.lhy.mvp_rxjava_retrofit.common.ApiService;
-import com.lhy.mvp_rxjava_retrofit.http.interceptor.CommonParamsInterceptor;
-import com.lhy.mvp_rxjava_retrofit.http.interceptor.HttpHeaderInterceptor;
-import com.lhy.mvp_rxjava_retrofit.util.HttpsUtils;
-import com.lhy.mvp_rxjava_retrofit.util.NetUtil;
-import com.lhy.mvp_rxjava_retrofit.util.Utils;
-import com.lhy.mvp_rxjava_retrofit.MyApplication;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.google.gson.Gson;
+import com.lhy.mvp_rxjava_retrofit.MyApplication;
+import com.lhy.mvp_rxjava_retrofit.common.ApiService;
+import com.lhy.mvp_rxjava_retrofit.http.interceptor.CommonParamsInterceptor;
+import com.lhy.mvp_rxjava_retrofit.http.interceptor.HttpHeaderInterceptor;
+import com.lhy.mvp_rxjava_retrofit.http.util.HttpsUtils;
+import com.lhy.mvp_rxjava_retrofit.http.util.NetUtil;
+import com.lhy.mvp_rxjava_retrofit.http.util.Utils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

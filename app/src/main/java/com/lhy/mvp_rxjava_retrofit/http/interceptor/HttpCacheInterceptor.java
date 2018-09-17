@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.lhy.mvp_rxjava_retrofit.util.Utils;
+import com.lhy.mvp_rxjava_retrofit.http.util.Utils;
 
 import java.io.IOException;
 

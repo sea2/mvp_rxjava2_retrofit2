@@ -1,4 +1,4 @@
-package com.lhy.mvp_rxjava_retrofit.common;
+package com.lhy.mvp_rxjava_retrofit.http.entity;
 
 /**
  * Created by Administrator on 2018/3/24.

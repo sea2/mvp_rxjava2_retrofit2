@@ -16,16 +16,16 @@ import android.widget.Toast;
 
 import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.lhy.mvp_rxjava_retrofit.common.ApiService;
-import com.lhy.mvp_rxjava_retrofit.common.BaseResponse;
 import com.lhy.mvp_rxjava_retrofit.entity.DataTestInfo;
 import com.lhy.mvp_rxjava_retrofit.http.BaseObserver;
 import com.lhy.mvp_rxjava_retrofit.http.RetrofitServiceManager;
 import com.lhy.mvp_rxjava_retrofit.http.RetrofitWithProgressManager;
 import com.lhy.mvp_rxjava_retrofit.http.RxUtils;
 import com.lhy.mvp_rxjava_retrofit.http.down.RetrofitDownloadListener;
+import com.lhy.mvp_rxjava_retrofit.http.entity.BaseResponse;
+import com.lhy.mvp_rxjava_retrofit.http.util.Utils;
 import com.lhy.mvp_rxjava_retrofit.mvp.MvpActivity;
 import com.lhy.mvp_rxjava_retrofit.util.PermissionsUtil;
-import com.lhy.mvp_rxjava_retrofit.util.Utils;
 
 import java.io.File;
 import java.io.FileOutputStream;

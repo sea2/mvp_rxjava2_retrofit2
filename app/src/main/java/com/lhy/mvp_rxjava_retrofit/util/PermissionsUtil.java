@@ -3,6 +3,8 @@ package com.lhy.mvp_rxjava_retrofit.util;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 
+import com.lhy.mvp_rxjava_retrofit.http.util.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 

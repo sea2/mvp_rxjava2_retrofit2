@@ -1,4 +1,4 @@
-package com.lhy.mvp_rxjava_retrofit.util;
+package com.lhy.mvp_rxjava_retrofit.http.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -155,7 +155,7 @@ public class HttpsUtils {
 
         @Override
         public X509Certificate[] getAcceptedIssuers() {
-            return new java.security.cert.X509Certificate[]{};
+            return new X509Certificate[]{};
         }
     }
 

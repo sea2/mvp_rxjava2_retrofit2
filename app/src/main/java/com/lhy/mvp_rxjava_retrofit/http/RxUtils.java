@@ -1,6 +1,6 @@
 package com.lhy.mvp_rxjava_retrofit.http;
 
-import com.lhy.mvp_rxjava_retrofit.common.BaseResponse;
+import com.lhy.mvp_rxjava_retrofit.http.entity.BaseResponse;
 import com.lhy.mvp_rxjava_retrofit.http.exception.ApiException;
 
 import io.reactivex.FlowableTransformer;

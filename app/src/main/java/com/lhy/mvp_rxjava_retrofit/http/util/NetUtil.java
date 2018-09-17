@@ -1,4 +1,4 @@
-package com.lhy.mvp_rxjava_retrofit.util;
+package com.lhy.mvp_rxjava_retrofit.http.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

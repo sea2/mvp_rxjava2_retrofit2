@@ -4,11 +4,11 @@ import android.net.ParseException;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.lhy.mvp_rxjava_retrofit.http.exception.ApiException;
-import com.lhy.mvp_rxjava_retrofit.util.NetUtil;
-import com.lhy.mvp_rxjava_retrofit.util.StringUtils;
-import com.lhy.mvp_rxjava_retrofit.util.Utils;
 import com.google.gson.JsonParseException;
+import com.lhy.mvp_rxjava_retrofit.http.exception.ApiException;
+import com.lhy.mvp_rxjava_retrofit.http.util.NetUtil;
+import com.lhy.mvp_rxjava_retrofit.http.util.StringUtils;
+import com.lhy.mvp_rxjava_retrofit.http.util.Utils;
 
 import org.json.JSONException;
 
@@ -31,12 +31,12 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     private static final int INTERNAL_SERVER_ERROR = 500;
     private static final int GATEWAY_TIMEOUT = 504;
 
-    public BaseObserver(boolean isShowErrorToast) {
+    protected BaseObserver(boolean isShowErrorToast) {
         this.isShowErrorToast = isShowErrorToast;
     }
 
     //防止重复调用回调，拦截错误弹出
-    public BaseObserver() {
+    protected BaseObserver() {
         this.isShowErrorToast = false;
     }
 
