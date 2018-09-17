@@ -3,8 +3,8 @@ package com.lhy.mvp_rxjava_retrofit.mvp;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.lhy.mvp_rxjava_retrofit.R;
 import com.lhy.mvp_rxjava_retrofit.entity.DataTestInfo;
-import com.dream.rxjavademo.R;
 
 import java.util.HashMap;
 
