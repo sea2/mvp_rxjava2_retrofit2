@@ -52,9 +52,9 @@ public class InBaseDealActivity extends BaseActivity implements RetrofitDownload
 
     @Override
     protected void initView() {
-        iv = findViewById(com.dream.rxjavademo.R.id.iv);
-        tv = findViewById(com.dream.rxjavademo.R.id.tv);
-        mNumberProgressBar = findViewById(com.dream.rxjavademo.R.id.number_progress_bar);
+        iv = findViewById(R.id.iv);
+        tv = findViewById(R.id.tv);
+        mNumberProgressBar = findViewById(R.id.number_progress_bar);
         applyPermissions();
     }
 
@@ -85,7 +85,7 @@ public class InBaseDealActivity extends BaseActivity implements RetrofitDownload
 
     @Override
     protected int getLayoutId() {
-        return com.dream.rxjavademo.R.layout.activity_in_base_deal;
+        return R.layout.activity_in_base_deal;
     }
 
     public void clearData(View view) {
