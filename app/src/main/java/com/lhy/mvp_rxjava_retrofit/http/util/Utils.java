@@ -1,6 +1,7 @@
 package com.lhy.mvp_rxjava_retrofit.http.util;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 
 import com.lhy.mvp_rxjava_retrofit.MyApplication;
 
@@ -38,4 +39,20 @@ public class Utils {
     public static Context getContext() {
         return MyApplication.getInstance().getApplicationContext();
     }
+
+
+    /**
+     * desc:判断当前应用是否是debug状态
+     *
+     * @return
+     */
+    public static boolean isApkInDebug() {
+        try {
+            ApplicationInfo info = getContext().getApplicationInfo();
+            return (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }

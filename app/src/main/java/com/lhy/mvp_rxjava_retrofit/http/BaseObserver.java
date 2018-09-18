@@ -25,11 +25,23 @@ import retrofit2.HttpException;
 public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
     private boolean isShowErrorToast;
+    private boolean isNeedCache = false;
+    private int requestCode;
     private static final int FORBIDDEN = 403;
     private static final int NOT_FOUND = 404;
     private static final int REQUEST_TIMEOUT = 408;
     private static final int INTERNAL_SERVER_ERROR = 500;
     private static final int GATEWAY_TIMEOUT = 504;
+
+
+
+    protected BaseObserver(boolean isShowErrorToast, boolean isNeedCache, int requestCode) {
+        this.isShowErrorToast = isShowErrorToast;
+        this.isNeedCache = isNeedCache;
+        this.requestCode = requestCode;
+    }
+
+
 
     protected BaseObserver(boolean isShowErrorToast) {
         this.isShowErrorToast = isShowErrorToast;
@@ -62,6 +74,9 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
     @Override
     public void onNext(T t) {
         onCompleted(true, t, null);
+
+        if (isNeedCache) {
+        }
     }
 
     protected abstract void onCompleted(boolean isSuccess, T t, Throwable e);
@@ -120,7 +135,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
                 Toast.makeText(Utils.getContext(), errorMsg, Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(Utils.getContext(), "请检查您的网络", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Utils.getContext(), "当前网络不可用，请检查您的网络设置", Toast.LENGTH_SHORT).show();
         }
     }
 

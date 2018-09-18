@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.lhy.mvp_rxjava_retrofit.http.entity.BaseResponse;
 import com.lhy.mvp_rxjava_retrofit.http.BaseObserver;
 import com.lhy.mvp_rxjava_retrofit.http.RxUtils;
+import com.lhy.mvp_rxjava_retrofit.http.entity.BaseResponse;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.CompositeDisposable;

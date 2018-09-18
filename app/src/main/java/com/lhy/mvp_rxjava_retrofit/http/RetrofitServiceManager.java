@@ -2,11 +2,7 @@ package com.lhy.mvp_rxjava_retrofit.http;
 
 import android.util.Log;
 
-import com.franmontiel.persistentcookiejar.PersistentCookieJar;
-import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
-import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.google.gson.Gson;
-import com.lhy.mvp_rxjava_retrofit.MyApplication;
 import com.lhy.mvp_rxjava_retrofit.common.ApiService;
 import com.lhy.mvp_rxjava_retrofit.http.interceptor.CommonParamsInterceptor;
 import com.lhy.mvp_rxjava_retrofit.http.interceptor.HttpHeaderInterceptor;
@@ -86,8 +82,6 @@ public class RetrofitServiceManager {
         HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
         okHttpClientBuilder.hostnameVerifier((hostname, session) -> true).sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager);
 
-        okHttpClientBuilder.cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(MyApplication.getInstance())));
-
         addInterceptor(okHttpClientBuilder);
 
 
@@ -121,13 +115,13 @@ public class RetrofitServiceManager {
 
 
         // 添加日志拦截器，非debug模式不打印任何日志
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        builder.addInterceptor(loggingInterceptor);
+        if (Utils.isApkInDebug()) {
+            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            builder.addInterceptor(loggingInterceptor);
+        }
 
     }
-
-
 
 
     /**
