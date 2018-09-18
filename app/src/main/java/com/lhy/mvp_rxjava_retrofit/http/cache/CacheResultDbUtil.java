@@ -15,13 +15,13 @@ import java.util.List;
  * Created by WZG on 2016/10/25.
  */
 
-public class CookieDbUtil {
-    private static CookieDbUtil db;
+public class CacheResultDbUtil {
+    private static CacheResultDbUtil db;
     private final static String dbName = "http_cache_db";
     private DaoMaster.DevOpenHelper openHelper;
 
 
-    public CookieDbUtil() {
+    public CacheResultDbUtil() {
         openHelper = new DaoMaster.DevOpenHelper(Utils.getContext(), dbName);
     }
 
@@ -30,11 +30,11 @@ public class CookieDbUtil {
      * 获取单例
      * @return
      */
-    public static CookieDbUtil getInstance() {
+    public static CacheResultDbUtil getInstance() {
         if (db == null) {
-            synchronized (CookieDbUtil.class) {
+            synchronized (CacheResultDbUtil.class) {
                 if (db == null) {
-                    db = new CookieDbUtil();
+                    db = new CacheResultDbUtil();
                 }
             }
         }
