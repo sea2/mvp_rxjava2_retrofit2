@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 public class LoginPresenter extends BasePresenter<LoginView> implements ILoginPresenter {
     private LoginView loginView;
-    private ILoginModel loginModel;
+    private LoginModel loginModel;
 
     public LoginPresenter(LoginView loginView) {
         this.loginView = loginView;
