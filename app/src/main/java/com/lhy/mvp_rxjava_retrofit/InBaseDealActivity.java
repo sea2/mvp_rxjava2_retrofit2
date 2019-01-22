@@ -31,7 +31,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -223,9 +226,10 @@ public class InBaseDealActivity extends BaseActivity implements RetrofitDownload
                     @Override
                     public String apply(ResponseBody responseBody) throws Exception {
                         String pathFile = Utils.getContext().getExternalCacheDir().getAbsolutePath() + "/down_img/";
-                        String pathName = "img.jpg";
-                        writeFile(responseBody.byteStream(), pathFile, pathName);
-                        return pathFile.concat(pathName);
+                        String file_name = new SimpleDateFormat("yyyyMMdd-HHmmss", Locale.CHINA).format(new Date()) + "img.jpg";
+
+                        writeFile(responseBody.byteStream(), pathFile, file_name);
+                        return pathFile.concat(file_name);
                     }
                 }).observeOn(AndroidSchedulers.mainThread())
                 .subscribe((Consumer<String>) str -> {

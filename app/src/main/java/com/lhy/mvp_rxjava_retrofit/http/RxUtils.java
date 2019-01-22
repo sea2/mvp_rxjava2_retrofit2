@@ -58,6 +58,7 @@ public class RxUtils {
      * 统一返回结果处理 返回原始结果
      *
      * @param <T> 指定的泛型类型
+     *
      * @return ObservableTransformer
      */
     public static <T> ObservableTransformer<BaseResponse<T>, BaseResponse<T>> handleAll() {
